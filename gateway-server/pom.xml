@@ -1,27 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.hiberus</groupId>
         <artifactId>pizzerus</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-  <artifactId>config-server</artifactId>
-  <packaging>jar</packaging>
+    <artifactId>gateway-server</artifactId>
+    <packaging>jar</packaging>
 
-  <name>config-server</name>
-  <url>http://maven.apache.org</url>
+    <name>gateway-server</name>
+    <url>http://maven.apache.org</url>
 
-  <properties>
-      <spring-cloud.version>2022.0.4</spring-cloud.version>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud.version>2021.0.4</spring-cloud.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 

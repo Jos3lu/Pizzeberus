@@ -1,0 +1,21 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      routes:
+        - id: micro-pizza-read
+          uri: lb://pizza-read
+          predicates:
+            - Path=/pizzas/**
+        - id: micro-pizza-write
+          uri: lb://pizza-write
+          predicates:
+            - Path=/pizzas/**
+        - id: micro-user-crud
+          uri: lb://user-crud
+          predicates:
+            - Path=/users/**
