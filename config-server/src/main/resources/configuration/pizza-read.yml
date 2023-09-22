@@ -15,7 +15,7 @@ spring:
     activate:
       on-profile: default
   application:
-    name: user-crud
+    name: pizza-read
     zipkin: http://zipkin:9411
   datasource:
     platform: postgres

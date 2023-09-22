@@ -17,6 +17,9 @@
     <modules>
         <module>config-server</module>
         <module>eureka-server</module>
+        <module>pizza-read</module>
+        <module>pizza-write</module>
+        <module>user-crud</module>
     </modules>
     <properties>
         <java.version>17</java.version>
@@ -89,5 +92,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
