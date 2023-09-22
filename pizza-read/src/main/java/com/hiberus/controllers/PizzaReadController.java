@@ -11,7 +11,7 @@ public class PizzaReadController {
 
     @GetMapping(value = "/pizzas/{pizzaId}")
     public ResponseEntity<Void> getPizzas() {
-        return ResponseEntity.ok(null);
+        return ResponseEntity.noContent().build();
     }
 
 }
