@@ -10,12 +10,14 @@ spring:
         - id: micro-pizza-read
           uri: lb://pizza-read
           predicates:
-            - Path=/pizzas/**
+            - Path=/api/pizzas/**
+            - Method=GET
         - id: micro-pizza-write
           uri: lb://pizza-write
           predicates:
-            - Path=/pizzas/**
+            - Path=/api/pizzas/**
+            - Method=POST,PUT,DELETE
         - id: micro-user-crud
           uri: lb://user-crud
           predicates:
-            - Path=/users/**
+            - Path=/api/users/**
