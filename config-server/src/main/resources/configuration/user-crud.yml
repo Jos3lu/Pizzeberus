@@ -19,9 +19,9 @@ spring:
     zipkin: http://zipkin:9411
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/postgresql
+    url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: 1234
+    password: admin123
     driverClassName: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
