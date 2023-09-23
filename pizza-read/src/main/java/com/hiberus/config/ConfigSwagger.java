@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class ConfigSwagger {
 
     private static final String TITLE = "Pizza read API";
-    private static final String DESCRIPTION = "Description API Pizza read";
+    private static final String DESCRIPTION = "Responsible for managing pizza reads";
     private static final String BASE_PACKAGE = "com.hiberus.controllers";
     private static final String VERSION = "v1";
 
