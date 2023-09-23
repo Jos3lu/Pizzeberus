@@ -7,7 +7,7 @@
 ### User-crud
 - Responsible for managing users
 
-![diagramaMicrosSincronos.png](images/diagramaMicrosSincronos.png)
+![diagramaMicroservicios.png](images/diagramaMicroservicios.png)
 
 ## Installation
 1. ``mvn clean install`` to install the project dependencies
@@ -39,7 +39,7 @@
 
 ### Pizza-read API
 - Retrieve pizzas
-- Retrieve a pizza by its ID
+- Retrieve pizza by ID
 - [Swagger Pizza-read](http://localhost:8080/swagger-ui.html#/)
 
 ![swaggerPizzaRead.png](images/swaggerClothing.png)
@@ -56,6 +56,7 @@
 - Modify a user
 - Delete a user
 - Retrieve users
+- Retrieve user by ID
 - Select pizzas as favourite to users
 - Unselect pizzas as favourites to users
 - [Swagger User-crud](http://localhost:8082/swagger-ui.html)
