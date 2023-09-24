@@ -9,8 +9,8 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserGeneralResponseDto {
+public class UserPizzasResponseDto {
     private Long id;
     private String name;
-    private List<Long> pizzas;
+    private List<PizzaResponseDto> pizzas;
 }

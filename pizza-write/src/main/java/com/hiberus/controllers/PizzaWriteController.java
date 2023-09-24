@@ -25,7 +25,7 @@ public class PizzaWriteController {
     private PizzaWriteMapper pizzaWriteMapper;
 
     @PostMapping
-    @ApiOperation(value = "Create a new pizza")
+    @ApiOperation(value = "Create new pizza")
     public ResponseEntity<PizzaResponseDto> createPizza(@RequestBody PizzaCreateDto pizzaCreateDto) {
         try {
             return new ResponseEntity<>(pizzaWriteMapper.pizzaToResponseDto(

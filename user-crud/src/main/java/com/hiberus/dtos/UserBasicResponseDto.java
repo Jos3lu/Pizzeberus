@@ -12,5 +12,4 @@ import java.util.List;
 public class UserBasicResponseDto {
     private Long id;
     private String name;
-    private List<Long> pizzas;
 }

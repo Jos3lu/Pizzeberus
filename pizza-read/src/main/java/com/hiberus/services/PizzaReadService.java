@@ -17,10 +17,18 @@ public interface PizzaReadService {
     /**
      * Get pizza by ID
      *
-     * @param pizzaId ID of pizza
+     * @param pizzaId Pizza ID
      * @return Pizza
      * @throws PizzaNotFoundException Pizza not found
      */
     Pizza getPizza(Long pizzaId) throws PizzaNotFoundException;
+
+    /**
+     * Get user's favourite pizzas
+     *
+     * @param pizzaIds Pizza IDs
+     * @return List<Pizza>
+     */
+    List<Pizza> getFavouritePizzas(List<Long> pizzaIds);
 
 }

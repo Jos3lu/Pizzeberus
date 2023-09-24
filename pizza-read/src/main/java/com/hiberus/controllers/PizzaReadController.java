@@ -3,15 +3,13 @@ package com.hiberus.controllers;
 import com.hiberus.dtos.PizzaResponseDto;
 import com.hiberus.exceptions.PizzaNotFoundException;
 import com.hiberus.mappers.PizzaReadMapper;
+import com.hiberus.models.Pizza;
 import com.hiberus.services.PizzaReadService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,12 +26,7 @@ public class PizzaReadController {
     @GetMapping
     @ApiOperation(value = "Get pizzas")
     public ResponseEntity<List<PizzaResponseDto>> getPizzas() {
-        List<PizzaResponseDto> pizzas = pizzaReadService.getPizzas()
-                .stream()
-                .map(pizzaReadMapper::pizzaToResponseDto)
-                .toList();
-
-        return ResponseEntity.ok(pizzas);
+        return ResponseEntity.ok(pizzaToResponseDto(pizzaReadService.getPizzas()));
     }
 
     @GetMapping(value = "/{pizzaId}")
@@ -46,4 +39,17 @@ public class PizzaReadController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/favourites")
+    @ApiOperation(value = "Get user's favourite pizzas")
+    ResponseEntity<List<PizzaResponseDto>> getFavouritePizzas(@RequestParam List<Long> pizzaIds) {
+        return ResponseEntity.ok(pizzaToResponseDto(pizzaReadService.getFavouritePizzas(pizzaIds)));
+    }
+
+    private List<PizzaResponseDto> pizzaToResponseDto(List<Pizza> pizzas) {
+        return pizzas.stream()
+                .map(pizzaReadMapper::pizzaToResponseDto)
+                .toList();
+    }
+
 }

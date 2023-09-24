@@ -25,4 +25,9 @@ public class PizzaReadServiceImpl implements PizzaReadService {
         return pizzaReadRepository.findById(pizzaId)
                 .orElseThrow(() -> new PizzaNotFoundException(pizzaId));
     }
+
+    @Override
+    public List<Pizza> getFavouritePizzas(List<Long> pizzaIds) {
+        return pizzaReadRepository.findAllById(pizzaIds);
+    }
 }

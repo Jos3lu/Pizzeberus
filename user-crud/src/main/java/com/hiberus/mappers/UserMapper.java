@@ -1,9 +1,6 @@
 package com.hiberus.mappers;
 
-import com.hiberus.dtos.UserBasicResponseDto;
-import com.hiberus.dtos.UserCreateDto;
-import com.hiberus.dtos.UserGeneralResponseDto;
-import com.hiberus.dtos.UserUpdateDto;
+import com.hiberus.dtos.*;
 import com.hiberus.models.User;
 import org.mapstruct.Mapper;
 
@@ -13,4 +10,5 @@ public interface UserMapper {
     User dtoUpdateToUser(UserUpdateDto userUpdateDto);
     UserBasicResponseDto userToBasicResponseDto(User user);
     UserGeneralResponseDto userToGeneralResponseDto(User user);
+    UserPizzasResponseDto userToUserPizzasResponseDto(User user);
 }
