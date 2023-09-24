@@ -31,3 +31,19 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      shared:
+        sliding-window-type: count_based # Counter-based
+        sliding-window-size: 5 # Number of failed petitions allowed
+        slow-call-rate-threshold: 50 # Percentage we will allow of failed or slow petitions
+        permitted-number-of-calls-in-half-open-state: 1 # Number of petitions allowed in the half-open state
+        max-wait-duration-in-half-open-state: 10s # Max duration time of the half-open state
+        wait-duration-in-open-state: 10s # Time duration open-state
+        writable-stack-trace-enabled: true # Console logs
+        automatic-transition-from-open-to-half-open-enabled: true
+    instances:
+      user-crud:
+        base-config: shared
