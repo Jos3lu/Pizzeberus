@@ -58,7 +58,7 @@
 - Delete a user
 - Retrieve users
 - Retrieve user by ID
-- Select pizzas as favourite of users
+- Select pizzas as favourites of users
 - Unselect pizzas as favourites of users
 - [Swagger User-crud](http://localhost:8082/swagger-ui.html)
 
