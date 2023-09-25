@@ -27,7 +27,7 @@ public interface PizzaReadService {
      * @param pizzaIds Pizza IDs
      * @return List<Pizza>
      */
-    @GetMapping("/favourites")
+    @GetMapping("/api/pizzas/favourites")
     ResponseEntity<List<PizzaResponseDto>> getFavouritePizzas(@RequestParam List<Long> pizzaIds);
 
 }

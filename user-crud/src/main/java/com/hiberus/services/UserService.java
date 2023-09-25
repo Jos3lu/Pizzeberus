@@ -1,5 +1,7 @@
 package com.hiberus.services;
 
+import com.hiberus.dtos.PizzaResponseDto;
+import com.hiberus.exceptions.PizzaNotFoundException;
 import com.hiberus.exceptions.UserAlreadyExistsException;
 import com.hiberus.exceptions.UserNotFoundException;
 import com.hiberus.models.User;
@@ -51,4 +53,32 @@ public interface UserService {
      */
     User getUser(Long userId) throws UserNotFoundException;
 
+    /**
+     * Get user's favourite pizzas
+     *
+     * @param pizzaIds Pizza IDs
+     * @return List<PizzaResponseDto>
+     */
+    List<PizzaResponseDto> getFavouritePizzasUser(List<Long> pizzaIds);
+
+    /**
+     * Add favourite pizza to user
+     *
+     * @param userId User ID
+     * @param pizzaId Pizza ID
+     * @return User
+     * @throws UserNotFoundException User not found
+     * @throws PizzaNotFoundException Pizza not found
+     */
+    User addPizzaUser(Long userId, Long pizzaId) throws UserNotFoundException, PizzaNotFoundException;
+
+    /**
+     * Delete favourite pizza from user
+     *
+     * @param userId User ID
+     * @param pizzaId Pizza ID
+     * @return User
+     * @throws UserNotFoundException User not found
+     */
+    User deletePizzaUser(Long userId, Long pizzaId) throws UserNotFoundException;
 }

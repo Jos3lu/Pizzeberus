@@ -6,6 +6,8 @@ import com.hiberus.mappers.PizzaReadMapper;
 import com.hiberus.models.Pizza;
 import com.hiberus.services.PizzaReadService;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +33,10 @@ public class PizzaReadController {
 
     @GetMapping(value = "/{pizzaId}")
     @ApiOperation(value = "Get pizza by ID")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Successfully retrieved"),
+            @ApiResponse(code = 404, message = "Not found")
+    })
     public ResponseEntity<PizzaResponseDto> getPizza(@PathVariable Long pizzaId) {
         try {
             return ResponseEntity.ok(pizzaReadMapper.pizzaToResponseDto(
@@ -41,7 +47,10 @@ public class PizzaReadController {
     }
 
     @GetMapping("/favourites")
-    @ApiOperation(value = "Get user's favourite pizzas")
+    @ApiOperation(value = "Get pizzas by a list of IDs")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Successfully retrieved")
+    })
     ResponseEntity<List<PizzaResponseDto>> getFavouritePizzas(@RequestParam List<Long> pizzaIds) {
         return ResponseEntity.ok(pizzaToResponseDto(pizzaReadService.getFavouritePizzas(pizzaIds)));
     }

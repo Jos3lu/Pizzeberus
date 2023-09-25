@@ -9,6 +9,8 @@ import com.hiberus.mappers.PizzaWriteMapper;
 import com.hiberus.models.Pizza;
 import com.hiberus.services.PizzaWriteService;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,10 @@ public class PizzaWriteController {
 
     @PostMapping
     @ApiOperation(value = "Create new pizza")
+    @ApiResponses({
+            @ApiResponse(code = 201, message = "Successfully created"),
+            @ApiResponse(code = 409, message = "Already exists")
+    })
     public ResponseEntity<PizzaResponseDto> createPizza(@RequestBody PizzaCreateDto pizzaCreateDto) {
         try {
             return new ResponseEntity<>(pizzaWriteMapper.pizzaToResponseDto(
@@ -37,7 +43,11 @@ public class PizzaWriteController {
     }
 
     @PutMapping(value = "/{pizzaId}")
-    @ApiOperation(value = "Modify an existing pizza")
+    @ApiOperation(value = "Update an existing pizza")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Successfully updated"),
+            @ApiResponse(code = 404, message = "Not found")
+    })
     public ResponseEntity<PizzaResponseDto> updatePizza(@PathVariable Long pizzaId, @RequestBody PizzaUpdateDto pizzaUpdateDto) {
        try {
            PizzaResponseDto pizza = pizzaWriteMapper.pizzaToResponseDto(pizzaWriteService
