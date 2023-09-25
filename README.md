@@ -40,7 +40,7 @@
 ### Pizza-read API
 - Retrieve pizzas
 - Retrieve pizza by ID
-- Retreive pizza by list of IDs
+- Retreive pizzas by list of IDs
 - [Swagger Pizza-read](http://localhost:8080/swagger-ui.html#/)
 
 ![swaggerPizzaRead.png](images/swaggerPizzaRead.png)
@@ -58,8 +58,8 @@
 - Delete a user
 - Retrieve users
 - Retrieve user by ID
-- Select pizzas as favourite to users
-- Unselect pizzas as favourites to users
+- Select pizzas as favourite of users
+- Unselect pizzas as favourites of users
 - [Swagger User-crud](http://localhost:8082/swagger-ui.html)
 
 ![swaggerUserCrud.png](images/swaggerUserCrud.png)
