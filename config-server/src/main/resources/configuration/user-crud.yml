@@ -19,7 +19,7 @@ spring:
     zipkin: http://zipkin:9411
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://${pizzeberus_db:localhost}:5432/postgres
     username: postgres
     password: admin123
     driverClassName: org.postgresql.Driver

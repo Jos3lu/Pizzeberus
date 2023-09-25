@@ -28,7 +28,7 @@ services:
       - "TZ=@timezone@"
       - "RABBIT_URI=amqp://guest:guest@rabbitmq:5672"
 
-  database:
+  pizzeberus_db:
     image: postgres
     container_name: "pizzeberus_db"
     ports:
