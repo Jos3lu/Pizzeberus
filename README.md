@@ -48,7 +48,7 @@
 - Retrieve pizzas
 - Retrieve pizza by ID
 - Retreive pizzas by list of IDs
-- [Swagger Pizza-read](http://localhost:8081/swagger-ui.html#/)
+- [Swagger Pizza-read](http://localhost:8081/swagger-ui.html)
 
 ![swaggerPizzaRead.png](images/swaggerPizzaRead.png)
 
