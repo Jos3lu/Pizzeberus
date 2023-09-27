@@ -7,7 +7,7 @@
 ### User-crud
 - Responsible for managing users
 
-![diagramaMicroservicios.png](images/diagramaMicroservicios.png)
+![diagramMicroservices.png](images/diagramMicroservices.png)
 
 ## Installation
 1. ``mvn clean install`` to install the project dependencies
@@ -37,20 +37,20 @@
 - Provides mechanisms for sending, receiving, storing & visualizing traces
 - [Zipkin URL](http://localhost:9411/)
 
+### Pizza-write API
+- Create a new pizza
+- Modify a pizza
+- [Swagger Pizza-write](http://localhost:8080/swagger-ui.html)
+
+![swaggerPizzaWrite.png](images/swaggerPizzaWrite.png)
+
 ### Pizza-read API
 - Retrieve pizzas
 - Retrieve pizza by ID
 - Retreive pizzas by list of IDs
-- [Swagger Pizza-read](http://localhost:8080/swagger-ui.html#/)
+- [Swagger Pizza-read](http://localhost:8081/swagger-ui.html#/)
 
 ![swaggerPizzaRead.png](images/swaggerPizzaRead.png)
-
-### Pizza-write API
-- Create a new pizza
-- Modify a pizza
-- [Swagger Pizza-write](http://localhost:8081/swagger-ui.html)
-
-![swaggerPizzaWrite.png](images/swaggerPizzaWrite.png)
 
 ### User-crud API
 - Create a new user
