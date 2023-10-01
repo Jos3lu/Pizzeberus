@@ -3,7 +3,7 @@ package com.hiberus.models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Getter
 @NoArgsConstructor
@@ -25,6 +25,6 @@ public class User {
     @Setter
     @Column(name = "favourite_pizzas")
     @ElementCollection
-    private List<Long> pizzas;
+    private Set<Long> pizzas;
 
 }

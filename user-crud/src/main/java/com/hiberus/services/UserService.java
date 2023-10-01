@@ -7,6 +7,7 @@ import com.hiberus.exceptions.UserNotFoundException;
 import com.hiberus.models.User;
 
 import java.util.List;
+import java.util.Set;
 
 public interface UserService {
 
@@ -59,7 +60,7 @@ public interface UserService {
      * @param pizzaIds Pizza IDs
      * @return List<PizzaResponseDto>
      */
-    List<PizzaResponseDto> getFavouritePizzasUser(List<Long> pizzaIds);
+    List<PizzaResponseDto> getFavouritePizzasUser(Set<Long> pizzaIds);
 
     /**
      * Add favourite pizza to user

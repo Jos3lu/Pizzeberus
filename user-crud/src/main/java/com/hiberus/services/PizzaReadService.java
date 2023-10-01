@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Set;
 
 @FeignClient(name = "pizza-read")
 public interface PizzaReadService {
@@ -28,6 +29,6 @@ public interface PizzaReadService {
      * @return List<Pizza>
      */
     @GetMapping("/api/pizzas/favourites")
-    ResponseEntity<List<PizzaResponseDto>> getFavouritePizzas(@RequestParam List<Long> pizzaIds);
+    ResponseEntity<List<PizzaResponseDto>> getFavouritePizzas(@RequestParam Set<Long> pizzaIds);
 
 }

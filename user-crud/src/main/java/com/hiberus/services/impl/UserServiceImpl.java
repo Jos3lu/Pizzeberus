@@ -14,9 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -70,7 +68,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @CircuitBreaker(name = "favourites-pizzas", fallbackMethod = "fallBackGetFavouritePizzas")
-    public List<PizzaResponseDto> getFavouritePizzasUser(List<Long> pizzaIds) {
+    public List<PizzaResponseDto> getFavouritePizzasUser(Set<Long> pizzaIds) {
         return pizzaReadService.getFavouritePizzas(pizzaIds).getBody();
     }
 
@@ -99,7 +97,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-    private List<PizzaResponseDto> fallBackGetFavouritePizzas(List<Long> pizzaIds, Throwable throwable) {
+    private List<PizzaResponseDto> fallBackGetFavouritePizzas(Set<Long> pizzaIds, Throwable throwable) {
         log.info("Sent default favourite pizzas");
         return Collections.emptyList();
     }
@@ -115,7 +113,7 @@ public class UserServiceImpl implements UserService {
         return User.builder()
                 .id(-1L)
                 .name("Default user")
-                .pizzas(new ArrayList<>())
+                .pizzas(new HashSet<>())
                 .build();
     }
 
