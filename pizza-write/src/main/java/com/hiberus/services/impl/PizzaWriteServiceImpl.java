@@ -56,7 +56,7 @@ public class PizzaWriteServiceImpl implements PizzaWriteService {
             throw new PizzaNotFoundException(pizzaId);
         }
 
-        log.info("Sent default pizza");
+        log.warn("Sent default pizza");
         return Pizza.builder().id(-1L).name("Default pizza").build();
     }
 }

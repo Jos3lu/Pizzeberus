@@ -98,7 +98,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private List<PizzaResponseDto> fallBackGetFavouritePizzas(Set<Long> pizzaIds, Throwable throwable) {
-        log.info("Sent default favourite pizzas");
+        log.warn("Sent default favourite pizzas");
         return Collections.emptyList();
     }
 
@@ -109,7 +109,7 @@ public class UserServiceImpl implements UserService {
         }
 
         // Send default user
-        log.info("Sent default user");
+        log.warn("Sent default user");
         return User.builder()
                 .id(-1L)
                 .name("Default user")
